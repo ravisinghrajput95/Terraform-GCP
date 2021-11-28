@@ -25,6 +25,6 @@ resource "google_compute_firewall" "firewall_custom_vpc" {
     ports    = ["80", "22"]
   }
   source_ranges = ["0.0.0.0/0"]
-  source_tags   = ["web-server"]
-  target_tags   = ["web-server"]
+  source_tags   = [ var.tag_name ]
+  target_tags   = [ var.tag_name ]
 }
